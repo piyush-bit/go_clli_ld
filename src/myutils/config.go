@@ -104,8 +104,6 @@ func UpdateConfig(config *Config) error {
 }
 
 	func TestBackend(config *Config , backendStatus chan bool)  {
-		// test the backend
-		fmt.Println("Testing backend")
 		//create a http client with 5 sec timeout
 		client := &http.Client{
 			Timeout: 5 * time.Second,
@@ -134,5 +132,4 @@ func UpdateConfig(config *Config) error {
 		}
 		
 		backendStatus <- true
-		fmt.Println("Backend tested successfully")
 	}

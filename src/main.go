@@ -30,6 +30,11 @@ func main() {
 		os.Exit(1)
 	}
 
+	if(len(os.Args) < 2) {
+		fmt.Println("No command provided")
+		os.Exit(1)
+	}
+
 	// take in the first argument as the command
 	cmd := os.Args[1]
 	fmt.Println("Command: ", cmd)
@@ -61,6 +66,10 @@ func main() {
 		// parse the a b to int and pass to add function
 		fmt.Println("factorial of ", n, " is ", factorial(n))
 
+
+	case "listencpp" : 
+		 delay := 1000
+		myutils.CompileAndListenCpp(os.Args[2],&delay)
 	
 
 	default:
